@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head><title>
+        Class Timetable
+    </title></head>
+    <body>
+        <h1>
+            Class Timetable
+        </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Time Slot</th>
+                    <th>Subject</th>
+                    <th>Faculty Name</th>
+                    <th>Classroom</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for slot in slots %}
+                <tr>
+                    <td>{{slot.day}}</td>
+                    <td>{{slot.start_time}}</td>
+                    <td>{{slot.subject_name}}</td>
+                    <td>{{slot.faculty_name}}</td>
+                    <td>{{slot.classroom}}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="no-records">No timetable records are available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
